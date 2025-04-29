@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide d'utilisation - Lovely Bio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .guide-section {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .guide-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-bg);
+        }
+        
+        .guide-section h3 {
+            margin: 25px 0 15px;
+            color: var(--secondary-color);
+        }
+        
+        .guide-section p, .guide-section li {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .guide-section ul, .guide-section ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .guide-section li {
+            margin-bottom: 10px;
+        }
+        
+        .guide-img {
+            max-width: 100%;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tip-box {
+            background-color: rgba(230, 138, 0, 0.1);
+            padding: 15px;
+            border-left: 4px solid var(--primary-color);
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .tip-box p {
+            margin-bottom: 0;
+        }
+        
+        .back-to-site {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--secondary-color);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Lovely Bio</h1>
+            </div>
+            <nav id="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Retour au site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="guide-container">
+        <div class="guide-section">
+            <h1>Guide d'utilisation complet</h1>
+            <p>Bienvenue dans le guide d'utilisation de votre site web Lovely Bio. Ce document vous aidera à naviguer, personnaliser et tirer le meilleur parti de votre site vitrine.</p>
+        </div>
+
+        <div class="guide-section">
+            <h2>1. Navigation sur le site</h2>
+            <p>Votre site Lovely Bio est conçu pour être intuitif et facile à naviguer, tant pour vous que pour vos visiteurs.</p>
+            
+            <h3>Structure du site</h3>
+            <p>Le site est organisé en plusieurs sections accessibles depuis le menu de navigation :</p>
+            <ul>
+                <li><strong>Accueil</strong> - La page d'accueil présente une introduction à votre marque et met en avant vos principaux produits.</li>
+                <li><strong>À propos</strong> - Cette section raconte votre histoire, de Maroua/Moudan à aujourd'hui.</li>
+                <li><strong>Produits</strong> - Présentation de vos produits cosmétiques naturels classés par catégories.</li>
+                <li><strong>Services</strong> - Informations sur vos services de coaching et formation.</li>
+                <li><strong>FAQ</strong> - Réponses aux questions fréquemment posées par vos clients.</li>
+                <li><strong>Contact</strong> - Formulaire de contact et liens vers vos réseaux sociaux.</li>
+            </ul>
+            
+            <h3>Navigation mobile</h3>
+            <p>Sur les appareils mobiles, le menu est accessible en cliquant sur l'icône de menu "hamburger" (☰) en haut à droite de l'écran.</p>
+            
+            <div class="tip-box">
+                <p><strong>Astuce :</strong> Pour un défilement plus rapide, utilisez les liens de navigation plutôt que de faire défiler manuellement la page.</p>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>2. Personnalisation du site</h2>
+            <p>Votre site est entièrement personnalisable pour refléter l'identité visuelle de votre marque Lovely Bio.</p>
+            
+            <h3>Modification des images</h3>
+            <p>Pour remplacer les images par défaut par vos propres photos :</p>
+            <ol>
+                <li>Préparez des images de haute qualité dans les formats .jpg, .png ou .webp</li>
+                <li>Créez un dossier "images" à la racine du site s'il n'existe pas déjà</li>
+                <li>Nommez vos images avec des noms pertinents (par exemple : "hero-image.jpg", "savon-1.jpg", etc.)</li>
+                <li>Replacez les images existantes dans le dossier "images" par vos propres fichiers</li>
+            </ol>
+            
+            <h3>Modification des couleurs</h3>
+            <p>Pour modifier les couleurs du site :</p>
+            <ol>
+                <li>Ouvrez le fichier "css/styles.css"</li>
+                <li>Localisez la section ":root" au début du fichier</li>
+                <li>Modifiez les valeurs des variables de couleurs selon vos préférences :</li>
+            </ol>
+            <pre><code>:root {
+    --primary-color: #e68a00;    /* Couleur principale */
+    --secondary-color: #8c5e11;  /* Couleur secondaire */
+    --accent-color: #f8c471;     /* Couleur d'accent */
+    /* ... autres variables ... */
+}</code></pre>
+            
+            <h3>Modification du contenu</h3>
+            <p>Pour modifier les textes et informations du site :</p>
+            <ol>
+                <li>Ouvrez le fichier "index.html" avec un éditeur de texte</li>
+                <li>Localisez la section à modifier (Accueil, À propos, Produits, etc.)</li>
+                <li>Modifiez le texte entre les balises HTML correspondantes</li>
+            </ol>
+        </div>
+
+        <div class="guide-section">
+            <h2>3. Fonctionnalités de partage</h2>
+            <p>Votre site inclut des fonctionnalités permettant aux visiteurs de le partager facilement sur différentes plateformes.</p>
+            
+            <h3>Options de partage</h3>
+            <p>Dans la section Contact, les visiteurs peuvent partager votre site via :</p>
+            <ul>
+                <li><strong>Copier le lien</strong> - Copie l'URL du site dans le presse-papier</li>
+                <li><strong>WhatsApp</strong> - Partage le lien via WhatsApp</li>
+                <li><strong>Facebook</strong> - Partage le lien sur Facebook</li>
+                <li><strong>Twitter</strong> - Partage le lien sur Twitter</li>
+            </ul>
+            
+            <h3>Comment utiliser les boutons de partage</h3>
+            <ol>
+                <li>Faites défiler jusqu'à la section Contact</li>
+                <li>Cliquez sur l'un des boutons de partage dans la section "Partagez notre site"</li>
+                <li>Suivez les instructions de la plateforme choisie pour finaliser le partage</li>
+            </ol>
+            
+            <div class="tip-box">
+                <p><strong>Remarque :</strong> Les URL partagées incluront automatiquement le titre de votre site et son lien, optimisant ainsi la visibilité sur les réseaux sociaux.</p>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>4. Gestion des sections de produits</h2>
+            <p>La section Produits de votre site permet aux visiteurs de filtrer vos offres par catégories.</p>
+            
+            <h3>Système de catégories</h3>
+            <p>Les produits sont organisés par catégories :</p>
+            <ul>
+                <li>Savons</li>
+                <li>Laits</li>
+                <li>Gels</li>
+                <li>Gommages</li>
+            </ul>
+            
+            <h3>Ajout d'un nouveau produit</h3>
+            <p>Pour ajouter un nouveau produit :</p>
+            <ol>
+                <li>Ouvrez le fichier "index.html"</li>
+                <li>Localisez la section des produits (<code>&lt;section id="produits"&gt;</code>)</li>
+                <li>Repérez le conteneur des produits (<code>&lt;div class="products-grid"&gt;</code>)</li>
+                <li>Copiez un bloc de produit existant et collez-le dans le conteneur</li>
+                <li>Modifiez les informations (image, titre, description, caractéristiques)</li>
+                <li>Assurez-vous de définir correctement l'attribut <code>data-category</code> pour permettre le filtrage</li>
+            </ol>
+            
+            <h3>Structure d'un bloc produit</h3>
+            <pre><code>&lt;div class="product-card" data-category="savons"&gt;
+    &lt;div class="product-image"&gt;
+        &lt;img src="images/savon-1.jpg" alt="Savon naturel"&gt;
+        &lt;div class="product-overlay"&gt;
+            &lt;a href="#" class="view-product"&gt;Voir détails&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="product-info"&gt;
+        &lt;h3&gt;Savon au Karité&lt;/h3&gt;
+        &lt;p&gt;Savon naturel enrichi au beurre de karité pour une peau douce et hydratée.&lt;/p&gt;
+        &lt;div class="product-features"&gt;
+            &lt;span&gt;100% Naturel&lt;/span&gt;
+            &lt;span&gt;Peau Sèche&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="guide-section">
+            <h2>5. Gestion des formulaires</h2>
+            <p>Votre site contient deux formulaires : un formulaire de contact et un formulaire d'inscription à la newsletter.</p>
+            
+            <h3>Formulaire de contact</h3>
+            <p>Le formulaire de contact permet aux visiteurs de vous envoyer directement des messages. Pour le moment, il affiche simplement un message de confirmation après soumission.</p>
+            
+            <p>Pour connecter ce formulaire à un véritable système d'e-mail :</p>
+            <ol>
+                <li>Ouvrez le fichier "js/main.js"</li>
+                <li>Localisez la section de gestion du formulaire de contact (recherchez <code>contactForm.addEventListener</code>)</li>
+                <li>Remplacez le code actuel par une requête AJAX vers votre service d'e-mail préféré ou un script PHP personnalisé</li>
+            </ol>
+            
+            <h3>Formulaire Newsletter</h3>
+            <p>De même, pour connecter le formulaire d'inscription à la newsletter à un service réel :</p>
+            <ol>
+                <li>Ouvrez le fichier "js/main.js"</li>
+                <li>Localisez la section de gestion du formulaire newsletter (recherchez <code>newsletterForm.addEventListener</code>)</li>
+                <li>Remplacez le code actuel par une intégration avec un service comme Mailchimp, SendinBlue, etc.</li>
+            </ol>
+            
+            <div class="tip-box">
+                <p><strong>Important :</strong> Assurez-vous de respecter le RGPD en incluant des mentions légales appropriées concernant la collecte des données personnelles.</p>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h2>6. FAQ et réponses</h2>
+            <p>La section FAQ permet de répondre aux questions fréquentes de vos clients et prospects.</p>
+            
+            <h3>Modification des questions existantes</h3>
+            <p>Pour modifier les questions et réponses existantes :</p>
+            <ol>
+                <li>Ouvrez le fichier "index.html"</li>
+                <li>Localisez la section FAQ (<code>&lt;section id="faq"&gt;</code>)</li>
+                <li>Modifiez le texte des questions (<code>&lt;h3&gt;</code>) et des réponses (<code>&lt;p&gt;</code>)</li>
+            </ol>
+            
+            <h3>Ajout de nouvelles questions</h3>
+            <p>Pour ajouter une nouvelle question :</p>
+            <ol>
+                <li>Copiez un bloc de question-réponse existant</li>
+                <li>Collez-le dans le conteneur FAQ (<code>&lt;div class="faq-container"&gt;</code>)</li>
+                <li>Modifiez la question et la réponse selon vos besoins</li>
+            </ol>
+        </div>
+
+        <div class="guide-section">
+            <h2>7. Optimisation pour les moteurs de recherche (SEO)</h2>
+            <p>Pour améliorer le référencement de votre site :</p>
+            
+            <h3>Métadonnées</h3>
+            <p>Modifiez les balises meta dans la section <code>&lt;head&gt;</code> du fichier "index.html" :</p>
+            <ul>
+                <li><strong>Titre</strong> - Modifiez le contenu de la balise <code>&lt;title&gt;</code></li>
+                <li><strong>Description</strong> - Optimisez la balise <code>&lt;meta name="description"&gt;</code></li>
+            </ul>
+            
+            <h3>Texte alternatif des images</h3>
+            <p>Assurez-vous que toutes vos images ont un attribut <code>alt</code> descriptif et pertinent, par exemple :</p>
+            <pre><code>&lt;img src="images/savon-1.jpg" alt="Savon naturel au karité pour peau africaine"&gt;</code></pre>
+            
+            <h3>Structure des en-têtes</h3>
+            <p>Maintenez une hiérarchie logique des titres (h1, h2, h3) pour améliorer la compréhension de votre contenu par les moteurs de recherche.</p>
+        </div>
+
+        <div class="guide-section">
+            <h2>8. Maintenance du site</h2>
+            <p>Pour maintenir votre site à jour et performant :</p>
+            
+            <h3>Mises à jour régulières</h3>
+            <ul>
+                <li>Mettez à jour les informations de produits et services régulièrement</li>
+                <li>Actualisez les témoignages clients pour maintenir la confiance</li>
+                <li>Vérifiez et mettez à jour les liens vers vos réseaux sociaux</li>
+            </ul>
+            
+            <h3>Vérification des performances</h3>
+            <p>Utilisez des outils comme Google PageSpeed Insights ou GTmetrix pour évaluer et améliorer les performances de votre site.</p>
+            
+            <h3>Sauvegarde</h3>
+            <p>Effectuez régulièrement des sauvegardes complètes de votre site (fichiers HTML, CSS, JavaScript et images).</p>
+        </div>
+
+        <div class="back-to-site">
+            <a href="index.html" class="btn primary">Retour au site principal</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2023 Lovely Bio. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
