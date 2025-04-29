@@ -294,10 +294,25 @@ document.addEventListener('DOMContentLoaded', function() {
         curcuma: {
             title: "Savon au Curcuma",
             image: "images/savon-1.jpg",
-            description: "Savon gommant et hydratant qui lutte contre l'acné en régulant l'excès de sébum. Le curcuma, connu pour ses propriétés anti-inflammatoires et antioxydantes, laisse votre peau propre et éclatante.",
-            features: ["Anti-acné", "Hydratant", "Gommant", "Anti-inflammatoire", "Antioxydant"],
+            description: "Notre savon au curcuma est un produit 100% naturel spécialement formulé pour les peaux à tendance acnéique. Il combine les propriétés anti-inflammatoires et antioxydantes du curcuma avec des ingrédients naturels pour un nettoyage en profondeur.",
+            benefits: [
+                "Lutte efficacement contre l'acné en régulant l'excès de sébum",
+                "Ravive la peau et la rend uniforme",
+                "Propriétés anti-inflammatoires et antioxydantes",
+                "Laisse votre peau propre et éclatante",
+                "Convient à tous les types de peau"
+            ],
+            ingredients: [
+                "Curcuma biologique",
+                "Huile de coco",
+                "Beurre de karité",
+                "Huile essentielle de tea tree",
+                "Miel"
+            ],
+            usage: "Utiliser quotidiennement sur le visage et le corps. Masser délicatement sur peau humide, rincer à l'eau tiède.",
             price: "15€",
-            promo: "Promotion en cours!"
+            promo: "Promotion en cours!",
+            contact: "Pour commander, contactez-nous au 07 55 07 81 85"
         }
     };
 
@@ -317,16 +332,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal.querySelector('.modal-product-info h2').textContent = product.title;
                 modal.querySelector('.modal-description').textContent = product.description;
                 
-                const featuresContainer = modal.querySelector('.modal-features');
-                featuresContainer.innerHTML = '';
-                product.features.forEach(feature => {
-                    const span = document.createElement('span');
-                    span.textContent = feature;
-                    featuresContainer.appendChild(span);
+                // Ajout des bénéfices
+                const benefitsContainer = modal.querySelector('.modal-benefits');
+                benefitsContainer.innerHTML = '<h3>Bénéfices</h3>';
+                product.benefits.forEach(benefit => {
+                    const li = document.createElement('li');
+                    li.textContent = benefit;
+                    benefitsContainer.appendChild(li);
                 });
                 
+                // Ajout des ingrédients
+                const ingredientsContainer = modal.querySelector('.modal-ingredients');
+                ingredientsContainer.innerHTML = '<h3>Ingrédients</h3>';
+                product.ingredients.forEach(ingredient => {
+                    const li = document.createElement('li');
+                    li.textContent = ingredient;
+                    ingredientsContainer.appendChild(li);
+                });
+                
+                // Ajout du mode d'emploi
+                const usageContainer = modal.querySelector('.modal-usage');
+                usageContainer.innerHTML = `<h3>Mode d'emploi</h3><p>${product.usage}</p>`;
+                
+                // Ajout du prix et de la promotion
                 modal.querySelector('.price').textContent = product.price;
                 modal.querySelector('.promo').textContent = product.promo;
+                
+                // Ajout des informations de contact
+                modal.querySelector('.modal-contact').textContent = product.contact;
                 
                 modal.style.display = 'block';
             }
