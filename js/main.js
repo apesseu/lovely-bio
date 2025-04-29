@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Détails des produits
     const products = {
         curcuma: {
-            title: "Savon au Curcuma",
+            title: "Savon au Curcuma - Édition Limitée",
             image: "images/savon-1.jpg",
             description: "Notre savon au curcuma est un produit 100% naturel spécialement formulé pour les peaux à tendance acnéique. Il combine les propriétés anti-inflammatoires et antioxydantes du curcuma avec des ingrédients naturels pour un nettoyage en profondeur.",
             benefits: [
@@ -312,7 +312,29 @@ document.addEventListener('DOMContentLoaded', function() {
             usage: "Utiliser quotidiennement sur le visage et le corps. Masser délicatement sur peau humide, rincer à l'eau tiède.",
             price: "15€",
             promo: "Promotion en cours!",
-            contact: "Pour commander, contactez-nous au 07 55 07 81 85"
+            contact: "Pour commander, contactez-nous au 07 55 07 81 85",
+            specialFeatures: [
+                "Formule exclusive brevetée",
+                "Fabriqué en France",
+                "Sans parabènes ni sulfates",
+                "Testé dermatologiquement",
+                "Emballage écologique"
+            ],
+            customerReviews: [
+                {
+                    rating: 5,
+                    comment: "Un produit exceptionnel qui a transformé ma peau!",
+                    author: "Marie D."
+                },
+                {
+                    rating: 5,
+                    comment: "Je recommande vivement, ma peau n'a jamais été aussi belle!",
+                    author: "Sophie M."
+                }
+            ],
+            stockStatus: "En stock",
+            shippingInfo: "Livraison gratuite dès 50€ d'achat",
+            guarantee: "Satisfait ou remboursé pendant 30 jours"
         }
     };
 
@@ -327,14 +349,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const productId = button.getAttribute('data-product');
             if (productId && products[productId]) {
                 const product = products[productId];
+                
+                // Mise à jour des informations de base
                 modal.querySelector('.modal-product-image img').src = product.image;
                 modal.querySelector('.modal-product-image img').alt = product.title;
                 modal.querySelector('.modal-product-info h2').textContent = product.title;
                 modal.querySelector('.modal-description').textContent = product.description;
                 
                 // Ajout des bénéfices
-                const benefitsContainer = modal.querySelector('.modal-benefits');
-                benefitsContainer.innerHTML = '<h3>Bénéfices</h3>';
+                const benefitsContainer = modal.querySelector('.modal-benefits ul');
+                benefitsContainer.innerHTML = '';
                 product.benefits.forEach(benefit => {
                     const li = document.createElement('li');
                     li.textContent = benefit;
@@ -342,8 +366,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 // Ajout des ingrédients
-                const ingredientsContainer = modal.querySelector('.modal-ingredients');
-                ingredientsContainer.innerHTML = '<h3>Ingrédients</h3>';
+                const ingredientsContainer = modal.querySelector('.modal-ingredients ul');
+                ingredientsContainer.innerHTML = '';
                 product.ingredients.forEach(ingredient => {
                     const li = document.createElement('li');
                     li.textContent = ingredient;
@@ -351,12 +375,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 // Ajout du mode d'emploi
-                const usageContainer = modal.querySelector('.modal-usage');
-                usageContainer.innerHTML = `<h3>Mode d'emploi</h3><p>${product.usage}</p>`;
+                modal.querySelector('.modal-usage p').textContent = product.usage;
+                
+                // Ajout des caractéristiques spéciales
+                const featuresContainer = modal.querySelector('.modal-special-features ul');
+                featuresContainer.innerHTML = '';
+                product.specialFeatures.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featuresContainer.appendChild(li);
+                });
+                
+                // Ajout des avis clients
+                const reviewsContainer = modal.querySelector('.reviews-container');
+                reviewsContainer.innerHTML = '';
+                product.customerReviews.forEach(review => {
+                    const reviewDiv = document.createElement('div');
+                    reviewDiv.className = 'review-item';
+                    reviewDiv.innerHTML = `
+                        <div class="stars">
+                            ${'<i class="fas fa-star"></i>'.repeat(review.rating)}
+                        </div>
+                        <p class="comment">${review.comment}</p>
+                        <p class="author">${review.author}</p>
+                    `;
+                    reviewsContainer.appendChild(reviewDiv);
+                });
                 
                 // Ajout du prix et de la promotion
                 modal.querySelector('.price').textContent = product.price;
                 modal.querySelector('.promo').textContent = product.promo;
+                modal.querySelector('.stock-status').textContent = product.stockStatus;
+                
+                // Ajout des informations de livraison et garantie
+                modal.querySelector('.shipping-info').textContent = product.shippingInfo;
+                modal.querySelector('.guarantee-text').textContent = product.guarantee;
                 
                 // Ajout des informations de contact
                 modal.querySelector('.modal-contact').textContent = product.contact;
