@@ -165,57 +165,64 @@
                         <div class="product-image">
                             <img src="images/savon-1.jpg" alt="Savon au Curcuma">
                             <div class="product-overlay">
-                                <a href="#" class="view-product">Voir détails</a>
+                                <a href="#" class="view-product" data-product="curcuma">Voir détails</a>
                             </div>
                         </div>
                         <div class="product-info">
                             <h3>Savon au Curcuma</h3>
-                            <p>Savon gommant et hydratant qui lutte contre l'acné en régulant l'excès de sébum. Le curcuma, connu pour ses propriétés anti-inflammatoires et antioxydantes, laisse votre peau propre et éclatante.</p>
+                            <p>Savon gommant et hydratant qui lutte contre l'acné en régulant l'excès de sébum.</p>
                             <div class="product-features">
                                 <span>Anti-acné</span>
                                 <span>Hydratant</span>
                                 <span>Gommant</span>
                             </div>
-                            <div class="product-price">
-                                <span class="price">15€</span>
-                                <span class="promo">Promotion en cours!</span>
-                            </div>
                         </div>
                     </div>
-                    <div class="product-card" data-category="savons">
+                    <div class="product-card" data-category="laits">
                         <div class="product-image">
-                            <img src="images/savon-2.jpg" alt="Savon à l'Argile">
+                            <img src="images/lait-1.jpg" alt="Lait hydratant">
                             <div class="product-overlay">
                                 <a href="#" class="view-product">Voir détails</a>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Savon à l'Argile</h3>
-                            <p>Savon purifiant à l'argile naturelle, idéal pour les peaux mixtes à grasses. Nettoie en profondeur tout en respectant l'équilibre naturel de votre peau.</p>
+                            <h3>Lait Hydratant</h3>
+                            <p>Lait corporel aux extraits naturels pour une hydratation intense.</p>
                             <div class="product-features">
-                                <span>Purifiant</span>
-                                <span>Équilibrant</span>
+                                <span>Hydratant</span>
+                                <span>Anti-taches</span>
                             </div>
                         </div>
                     </div>
-                    <div class="product-card" data-category="packs">
+                    <div class="product-card" data-category="gels">
                         <div class="product-image">
-                            <img src="images/pack-1.jpg" alt="Pack Soin Complet">
+                            <img src="images/gel-1.jpg" alt="Gel douche">
                             <div class="product-overlay">
                                 <a href="#" class="view-product">Voir détails</a>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Pack Soin Complet</h3>
-                            <p>Pack comprenant un savon au choix, un gant de massage et un gommage. Le combo parfait pour une routine beauté complète.</p>
+                            <h3>Gel Douche Exfoliant</h3>
+                            <p>Gel douche exfoliant aux extraits de plantes africaines.</p>
                             <div class="product-features">
-                                <span>Savon</span>
-                                <span>Gant de massage</span>
-                                <span>Gommage</span>
+                                <span>Exfoliant</span>
+                                <span>Tonifiant</span>
                             </div>
-                            <div class="product-price">
-                                <span class="price">35€</span>
-                                <span class="promo">Économisez 10€!</span>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="gommages">
+                        <div class="product-image">
+                            <img src="images/gommage-1.jpg" alt="Gommage corps">
+                            <div class="product-overlay">
+                                <a href="#" class="view-product">Voir détails</a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Gommage Corps au Café</h3>
+                            <p>Gommage corps au café pour une peau lisse et éclatante.</p>
+                            <div class="product-features">
+                                <span>Lissant</span>
+                                <span>Régénérant</span>
                             </div>
                         </div>
                     </div>
@@ -410,6 +417,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal pour les détails des produits -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-details">
+                <div class="modal-product-image">
+                    <img src="" alt="">
+                </div>
+                <div class="modal-product-info">
+                    <h2></h2>
+                    <p class="modal-description"></p>
+                    <div class="modal-features"></div>
+                    <div class="modal-price">
+                        <span class="price"></span>
+                        <span class="promo"></span>
+                    </div>
+                    <button class="btn primary">Commander</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

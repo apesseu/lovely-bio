@@ -288,4 +288,58 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', checkIfInView);
         window.addEventListener('load', checkIfInView);
     }
+
+    // Détails des produits
+    const products = {
+        curcuma: {
+            title: "Savon au Curcuma",
+            image: "images/savon-1.jpg",
+            description: "Savon gommant et hydratant qui lutte contre l'acné en régulant l'excès de sébum. Le curcuma, connu pour ses propriétés anti-inflammatoires et antioxydantes, laisse votre peau propre et éclatante.",
+            features: ["Anti-acné", "Hydratant", "Gommant", "Anti-inflammatoire", "Antioxydant"],
+            price: "15€",
+            promo: "Promotion en cours!"
+        }
+    };
+
+    // Gestion de la modale
+    const modal = document.getElementById('product-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const viewProductButtons = document.querySelectorAll('.view-product');
+
+    viewProductButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const productId = button.getAttribute('data-product');
+            if (productId && products[productId]) {
+                const product = products[productId];
+                modal.querySelector('.modal-product-image img').src = product.image;
+                modal.querySelector('.modal-product-image img').alt = product.title;
+                modal.querySelector('.modal-product-info h2').textContent = product.title;
+                modal.querySelector('.modal-description').textContent = product.description;
+                
+                const featuresContainer = modal.querySelector('.modal-features');
+                featuresContainer.innerHTML = '';
+                product.features.forEach(feature => {
+                    const span = document.createElement('span');
+                    span.textContent = feature;
+                    featuresContainer.appendChild(span);
+                });
+                
+                modal.querySelector('.price').textContent = product.price;
+                modal.querySelector('.promo').textContent = product.promo;
+                
+                modal.style.display = 'block';
+            }
+        });
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 }); 
