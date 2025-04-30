@@ -292,9 +292,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Détails des produits
     const products = {
         curcuma: {
-            title: "Savon au Curcuma - Édition Limitée",
+            title: "Savon Naturel - Édition Limitée",
             image: "images/savon-1.jpg",
-            description: "Notre savon au curcuma est un produit 100% naturel spécialement formulé pour les peaux à tendance acnéique. Il combine les propriétés anti-inflammatoires et antioxydantes du curcuma avec des ingrédients naturels pour un nettoyage en profondeur.",
+            description: "Notre savon naturel est un produit 100% naturel spécialement formulé pour les peaux à tendance acnéique. Il combine les propriétés anti-inflammatoires et antioxydantes du curcuma avec des ingrédients naturels pour un nettoyage en profondeur.",
             benefits: [
                 "Lutte efficacement contre l'acné en régulant l'excès de sébum",
                 "Ravive la peau et la rend uniforme",
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
             usage: "Utiliser quotidiennement sur le visage et le corps. Masser délicatement sur peau humide, rincer à l'eau tiède.",
             price: "15€",
             promo: "Promotion en cours!",
-            contact: "Pour commander, contactez-nous au 07 55 07 81 85",
+            contact: "Contactez-nous au 07 55 07 81 85",
             specialFeatures: [
                 "Formule exclusive brevetée",
                 "Fabriqué en France",
@@ -333,8 +333,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             ],
             stockStatus: "En stock",
-            shippingInfo: "Livraison gratuite dès 50€ d'achat",
-            guarantee: "Satisfait ou remboursé pendant 30 jours"
+            shippingInfo: "Livraison gratuite à partir de 50€ d'achat",
+            guarantee: "Satisfaction garantie ou remboursé sous 30 jours"
         }
     };
 
@@ -356,34 +356,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal.querySelector('.modal-product-info h2').textContent = product.title;
                 modal.querySelector('.modal-description').textContent = product.description;
                 
-                // Ajout des bénéfices
-                const benefitsContainer = modal.querySelector('.modal-benefits ul');
-                benefitsContainer.innerHTML = '';
+                // Mise à jour des bénéfices avec des icônes
+                const benefitsList = modal.querySelector('.modal-benefits ul');
+                benefitsList.innerHTML = '';
                 product.benefits.forEach(benefit => {
                     const li = document.createElement('li');
-                    li.textContent = benefit;
-                    benefitsContainer.appendChild(li);
+                    li.innerHTML = `<i class="fas fa-check-circle"></i>${benefit}`;
+                    benefitsList.appendChild(li);
                 });
                 
-                // Ajout des ingrédients
-                const ingredientsContainer = modal.querySelector('.modal-ingredients ul');
-                ingredientsContainer.innerHTML = '';
+                // Mise à jour des ingrédients avec des icônes
+                const ingredientsList = modal.querySelector('.modal-ingredients ul');
+                ingredientsList.innerHTML = '';
                 product.ingredients.forEach(ingredient => {
                     const li = document.createElement('li');
-                    li.textContent = ingredient;
-                    ingredientsContainer.appendChild(li);
+                    li.innerHTML = `<i class="fas fa-leaf"></i>${ingredient}`;
+                    ingredientsList.appendChild(li);
                 });
                 
-                // Ajout du mode d'emploi
+                // Mise à jour du mode d'emploi
                 modal.querySelector('.modal-usage p').textContent = product.usage;
                 
-                // Ajout des caractéristiques spéciales
-                const featuresContainer = modal.querySelector('.modal-special-features ul');
-                featuresContainer.innerHTML = '';
+                // Mise à jour des caractéristiques avec des icônes
+                const featuresList = modal.querySelector('.modal-special-features ul');
+                featuresList.innerHTML = '';
                 product.specialFeatures.forEach(feature => {
                     const li = document.createElement('li');
-                    li.textContent = feature;
-                    featuresContainer.appendChild(li);
+                    li.innerHTML = `<i class="fas fa-star"></i>${feature}`;
+                    featuresList.appendChild(li);
                 });
                 
                 // Ajout des avis clients
@@ -402,17 +402,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     reviewsContainer.appendChild(reviewDiv);
                 });
                 
-                // Ajout du prix et de la promotion
+                // Mise à jour du prix et des promotions
                 modal.querySelector('.price').textContent = product.price;
-                modal.querySelector('.promo').textContent = product.promo;
-                modal.querySelector('.stock-status').textContent = product.stockStatus;
+                modal.querySelector('.promo').textContent = product.promo || '';
+                modal.querySelector('.stock-status').textContent = product.stockStatus || '';
                 
-                // Ajout des informations de livraison et garantie
-                modal.querySelector('.shipping-info').textContent = product.shippingInfo;
-                modal.querySelector('.guarantee-text').textContent = product.guarantee;
+                // Mise à jour des informations de livraison et garantie
+                modal.querySelector('.shipping-info').textContent = product.shippingInfo || 'Livraison sous 48h - Gratuite dès 50€ d\'achat';
+                modal.querySelector('.guarantee-text').textContent = product.guarantee || 'Satisfait ou remboursé pendant 30 jours';
                 
-                // Ajout des informations de contact
-                modal.querySelector('.modal-contact').textContent = product.contact;
+                // Mise à jour de la section contact
+                const contactLabel = modal.querySelector('.call-label');
+                if (contactLabel) {
+                    contactLabel.textContent = 'Contactez-nous au';
+                }
+
+                const contactPhoneText = modal.querySelector('.contact-phone-text');
+                if (contactPhoneText) {
+                    contactPhoneText.textContent = 'Contactez-nous au';
+                }
                 
                 modal.style.display = 'block';
             }
