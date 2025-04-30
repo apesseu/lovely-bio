@@ -988,6 +988,28 @@ footer {
     .services-grid {
         grid-template-columns: 1fr;
     }
+    .modal-product-details {
+        display: block;
+    }
+    
+    .modal-product-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 20px;
+    }
+
+    .modal-product-info {
+        width: 100%;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+    
+    .modal-product-image .badge-container {
+        position: relative;
+        margin: 15px auto;
+        justify-content: center;
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1078,7 +1100,7 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
-    overflow-y: auto; /* Permet le défilement si nécessaire */
+    overflow-y: auto; /* Permet le défilement principal si nécessaire */
 }
 
 .modal-content {
@@ -1089,8 +1111,8 @@ footer {
     width: clamp(280px, 90%, 800px);
     border-radius: var(--border-radius);
     animation: modalFadeIn 0.3s ease;
-    max-height: clamp(300px, 90vh, 1000px);
-    overflow-y: auto;
+    max-height: none; /* Suppression de la hauteur max pour éviter le double défilement */
+    overflow-y: visible; /* Pas de défilement au niveau du contenu */
 }
 
 @keyframes modalFadeIn {
