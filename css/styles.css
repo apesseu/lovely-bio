@@ -1178,4 +1178,349 @@ footer {
     .modal-product-details {
         flex-direction: column;
     }
+}
+
+/* Barre de défilement personnalisée pour tout le site */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(245, 230, 211, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+    border: 2px solid rgba(245, 230, 211, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+}
+
+/* Styles pour les sections avec icônes */
+.section-with-icon {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 30px;
+}
+
+.section-with-icon .section-icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.section-with-icon:hover .section-icon {
+    transform: translateY(-50%) scale(1.2);
+    box-shadow: 0 0 15px rgba(212, 167, 106, 0.5);
+}
+
+/* Styles pour les sous-sections avec icônes */
+.subsection-with-icon {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+}
+
+.subsection-with-icon .subsection-icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.subsection-with-icon:hover .subsection-icon {
+    transform: translateY(-50%) scale(1.2);
+    box-shadow: 0 0 10px rgba(193, 124, 63, 0.5);
+}
+
+/* Animation pour les icônes des sections et sous-sections */
+@keyframes pulse-icon {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.1); }
+    100% { transform: translateY(-50%) scale(1); }
+}
+
+.section-with-icon:hover .section-icon,
+.subsection-with-icon:hover .subsection-icon {
+    animation: pulse-icon 1.5s infinite;
+}
+
+/* Badges personnalisés */
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.badge-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.badge-custom .badge-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.badge-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Variantes de badges */
+.badge-primary {
+    border-left: 4px solid var(--primary-color);
+}
+
+.badge-primary .badge-icon {
+    background-color: var(--primary-color);
+}
+
+.badge-secondary {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.badge-secondary .badge-icon {
+    background-color: var(--secondary-color);
+}
+
+.badge-accent {
+    border-left: 4px solid var(--accent-color);
+}
+
+.badge-accent .badge-icon {
+    background-color: var(--accent-color);
+}
+
+.badge-aloe {
+    border-left: 4px solid var(--aloe-color);
+}
+
+.badge-aloe .badge-icon {
+    background-color: var(--aloe-color);
+}
+
+.badge-clay {
+    border-left: 4px solid var(--clay-color);
+}
+
+.badge-clay .badge-icon {
+    background-color: var(--clay-color);
+}
+
+/* Animation badge au survol */
+@keyframes badge-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.badge-custom:hover .badge-icon {
+    animation: badge-pulse 1.5s infinite;
+}
+
+/* Personnalisation de la barre de défilement dans la modale */
+.modal-product-info::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-product-info::-webkit-scrollbar-track {
+    background: rgba(245, 230, 211, 0.3);
+    border-radius: 10px;
+}
+
+.modal-product-info::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+    border: 2px solid rgba(245, 230, 211, 0.3);
+}
+
+.modal-product-info::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+}
+
+/* Style renforcé pour les sections de la modale */
+.modal-section {
+    position: relative;
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.modal-section:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.modal-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--light-bg);
+}
+
+.modal-section-title .title-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.modal-section-title h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+/* Variantes de couleurs pour les icônes des sections de la modale */
+.modal-benefits .title-icon {
+    background-color: #4CAF50; /* Vert */
+}
+
+.modal-ingredients .title-icon {
+    background-color: #8BC34A; /* Vert clair */
+}
+
+.modal-usage .title-icon {
+    background-color: #009688; /* Turquoise */
+}
+
+.modal-special-features .title-icon {
+    background-color: #FFC107; /* Jaune */
+}
+
+.modal-reviews .title-icon {
+    background-color: #FF5722; /* Orange foncé */
+}
+
+.modal-price .title-icon {
+    background-color: #9C27B0; /* Violet */
+}
+
+.modal-shipping .title-icon {
+    background-color: #FF9800; /* Orange */
+}
+
+.modal-guarantee .title-icon {
+    background-color: #2196F3; /* Bleu */
+}
+
+.modal-contact .title-icon {
+    background-color: #E91E63; /* Rose */
+}
+
+/* Ajustement de la hauteur de la modale */
+.modal-product-info {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.modal-product-image .badge-container {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-product-image .badge-custom {
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Boutons d'action dans la modale - style image */
+.modal-action {
+    display: flex;
+    width: 100%;
+    margin: 40px 0;
+    gap: 15px;
+}
+
+.order-btn, .question-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    padding: 0 25px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.order-btn {
+    background-color: #D4A76A;
+    color: white;
+    border: none;
+    flex: 1.5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.question-btn {
+    background-color: #C17C3F;
+    color: white;
+    border: none;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.order-btn:hover, .question-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    opacity: 0.95;
+}
+
+.order-btn i, .question-btn i {
+    margin-right: 8px;
 } 

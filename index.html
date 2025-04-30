@@ -429,10 +429,23 @@
             <div class="modal-product-details">
                 <div class="modal-product-image">
                     <img src="" alt="">
-                    <div class="product-badges">
-                        <span class="badge eco">Écologique</span>
-                        <span class="badge made-in-france">Fabriqué en France</span>
-                        <span class="badge dermatologist">Testé dermatologiquement</span>
+                    <div class="badge-container">
+                        <div class="badge-custom badge-primary">
+                            <div class="badge-icon"><i class="fas fa-leaf"></i></div>
+                            <span>100% Naturel</span>
+                        </div>
+                        <div class="badge-custom badge-secondary">
+                            <div class="badge-icon"><i class="fas fa-flag"></i></div>
+                            <span>Fabriqué en France</span>
+                        </div>
+                        <div class="badge-custom badge-accent">
+                            <div class="badge-icon"><i class="fas fa-flask"></i></div>
+                            <span>Testé dermatologiquement</span>
+                        </div>
+                        <div class="badge-custom badge-aloe">
+                            <div class="badge-icon"><i class="fas fa-recycle"></i></div>
+                            <span>Écologique</span>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-product-info">
@@ -448,44 +461,94 @@
                         <span class="review-count">(12 avis)</span>
                     </div>
                     <p class="modal-description"></p>
-                    <div class="modal-benefits">
-                        <h3>Bénéfices</h3>
-                        <ul></ul>
+                    <div class="modal-benefits modal-section">
+                        <div class="modal-section-title">
+                            <div class="title-icon"><i class="fas fa-check-double"></i></div>
+                            <h3>Bénéfices</h3>
+                        </div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Lutte contre l'acné</li>
+                            <li><i class="fas fa-check-circle"></i>Régule le sébum</li>
+                            <li><i class="fas fa-check-circle"></i>Effet anti-inflammatoire</li>
+                        </ul>
                     </div>
-                    <div class="modal-ingredients">
-                        <h3>Ingrédients</h3>
-                        <ul></ul>
+                    <div class="modal-ingredients modal-section">
+                        <div class="modal-section-title">
+                            <div class="title-icon"><i class="fas fa-mortar-pestle"></i></div>
+                            <h3>Ingrédients</h3>
+                        </div>
+                        <ul>
+                            <li><i class="fas fa-leaf"></i>Huile de coco</li>
+                            <li><i class="fas fa-leaf"></i>Curcuma</li>
+                            <li><i class="fas fa-leaf"></i>Huile d'olive</li>
+                            <li><i class="fas fa-leaf"></i>Huile de karité</li>
+                        </ul>
                     </div>
-                    <div class="modal-usage">
-                        <h3>Mode d'emploi</h3>
-                        <p></p>
+                    <div class="modal-usage modal-section">
+                        <div class="modal-section-title">
+                            <div class="title-icon"><i class="fas fa-hands-wash"></i></div>
+                            <h3>Mode d'emploi</h3>
+                        </div>
+                        <p>Faire mousser avec de l'eau tiède et masser doucement sur le visage. Rincer abondamment.</p>
                     </div>
-                    <div class="modal-special-features">
-                        <h3>Caractéristiques</h3>
-                        <ul></ul>
+                    <div class="modal-special-features modal-section">
+                        <div class="modal-section-title">
+                            <div class="title-icon"><i class="fas fa-award"></i></div>
+                            <h3>Caractéristiques</h3>
+                        </div>
+                        <ul>
+                            <li><i class="fas fa-star"></i>100% naturel</li>
+                            <li><i class="fas fa-star"></i>Sans paraben</li>
+                            <li><i class="fas fa-star"></i>Sans conservateur</li>
+                        </ul>
                     </div>
-                    <div class="modal-reviews">
-                        <h3>Avis clients</h3>
+                    
+                    <div class="modal-reviews modal-section">
+                        <div class="modal-section-title">
+                            <div class="title-icon"><i class="fas fa-comments"></i></div>
+                            <h3>Avis clients</h3>
+                        </div>
                         <div class="reviews-container"></div>
                     </div>
-                    <div class="modal-price">
+                    <div class="modal-price modal-section">
+                        <div class="modal-section-title">
+                            <div class="title-icon"><i class="fas fa-tag"></i></div>
+                            <h3>Prix</h3>
+                        </div>
                         <span class="price"></span>
                         <span class="promo"></span>
                         <span class="stock-status"></span>
                     </div>
-                    <div class="modal-shipping">
-                        <i class="fas fa-truck"></i>
-                        <span class="shipping-info"></span>
+                    
+                    <div class="modal-shipping modal-section">
+                        <div class="modal-section-title">
+                            <div class="title-icon"><i class="fas fa-truck"></i></div>
+                            <h3>Livraison</h3>
+                        </div>
+                        <span class="shipping-info">Livraison sous 48h - Gratuite dès 50€ d'achat</span>
                     </div>
-                    <div class="modal-guarantee">
-                        <i class="fas fa-shield-alt"></i>
-                        <span class="guarantee-text"></span>
+                    <div class="modal-guarantee modal-section">
+                        <div class="modal-section-title">
+                            <div class="title-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h3>Garantie</h3>
+                        </div>
+                        <span class="guarantee-text">Satisfait ou remboursé pendant 30 jours</span>
                     </div>
-                    <div class="modal-contact"></div>
-                    <button class="order-btn">
-                        <i class="fas fa-shopping-cart"></i>
-                        Commander maintenant
-                    </button>
+                    
+                    <div class="contact-phone-section section-with-icon">
+                        <div class="section-icon"><i class="fas fa-phone"></i></div>
+                        <p class="contact-phone-text">Contactez-nous au</p>
+                        <a href="tel:0755078185" class="contact-phone-number">07 55 07 81 85</a>
+                    </div>
+                    
+                    <div class="modal-action">
+                        <button class="order-btn">
+                            <i class="fas fa-shopping-cart"></i> Commander maintenant
+                        </button>
+                        <button class="question-btn">
+                            <i class="fas fa-question-circle"></i> Poser une question
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
