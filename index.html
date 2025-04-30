@@ -422,6 +422,81 @@
         </div>
     </footer>
 
+    <!-- Modal pour la sélection des variétés de savon -->
+    <div id="variants-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-variants-modal">&times;</span>
+            <div class="variants-modal-header">
+                <h2>Choisissez votre variété de Savon Naturel</h2>
+                <p>Découvrez nos différentes variétés de savons naturels formulés pour différents types de peau et besoins spécifiques.</p>
+            </div>
+            <div class="variants-container">
+                <div class="variant-card" data-variant="curcuma">
+                    <div class="variant-image">
+                        <img src="images/savon-1.jpg" alt="Savon Naturel au Curcuma">
+                    </div>
+                    <div class="variant-info">
+                        <h3>Savon Naturel - Curcuma</h3>
+                        <p>Savon anti-acné et anti-inflammatoire pour peaux à problèmes</p>
+                        <div class="variant-highlights">
+                            <span>Anti-acné</span>
+                            <span>Anti-inflammatoire</span>
+                        </div>
+                        <button class="view-variant-btn">Voir détails</button>
+                    </div>
+                </div>
+                
+                <div class="variant-card" data-variant="citron">
+                    <div class="variant-image">
+                        <img src="images/savon-1.jpg" alt="Savon Naturel au Citron">
+                    </div>
+                    <div class="variant-info">
+                        <h3>Savon Naturel - Citron</h3>
+                        <p>Savon éclaircissant et tonifiant pour un teint lumineux</p>
+                        <div class="variant-highlights">
+                            <span>Éclaircissant</span>
+                            <span>Tonifiant</span>
+                        </div>
+                        <div class="variant-promo">2 achetés = 1 offert!</div>
+                        <button class="view-variant-btn">Voir détails</button>
+                    </div>
+                </div>
+                
+                <div class="variant-card" data-variant="carotte">
+                    <div class="variant-image">
+                        <img src="images/savon-1.jpg" alt="Savon Naturel à la Carotte">
+                    </div>
+                    <div class="variant-info">
+                        <h3>Savon Naturel - Carotte</h3>
+                        <p>Savon nourrissant et revitalisant pour peaux ternes</p>
+                        <div class="variant-highlights">
+                            <span>Nourrissant</span>
+                            <span>Antioxydant</span>
+                        </div>
+                        <div class="variant-promo">Nouveau produit!</div>
+                        <button class="view-variant-btn">Voir détails</button>
+                    </div>
+                </div>
+                
+                <div class="variant-card" data-variant="charbon">
+                    <div class="variant-image">
+                        <img src="images/savon-1.jpg" alt="Savon Naturel au Charbon">
+                    </div>
+                    <div class="variant-info">
+                        <h3>Savon Naturel - Charbon</h3>
+                        <p>Savon détoxifiant et purifiant anti-points noirs</p>
+                        <div class="variant-highlights">
+                            <span>Détoxifiant</span>
+                            <span>Purifiant</span>
+                        </div>
+                        <div class="variant-promo">Offre découverte!</div>
+                        <button class="view-variant-btn">Voir détails</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal pour les détails des produits -->
     <div id="product-modal" class="modal">
         <div class="modal-content">
@@ -460,6 +535,21 @@
                         </div>
                         <span class="review-count">(12 avis)</span>
                     </div>
+                    
+                    <!-- Sélecteur de variantes pour le savon naturel -->
+                    <div id="variants-selector" class="modal-variants-selector">
+                        <div class="modal-section-title">
+                            <div class="title-icon"><i class="fas fa-th-large"></i></div>
+                            <h3>Variantes</h3>
+                        </div>
+                        <div class="variants-buttons">
+                            <button class="variant-btn active" data-variant="curcuma">Curcuma</button>
+                            <button class="variant-btn" data-variant="citron">Citron</button>
+                            <button class="variant-btn" data-variant="carotte">Carotte</button>
+                            <button class="variant-btn" data-variant="charbon">Charbon</button>
+                        </div>
+                    </div>
+                    
                     <p class="modal-description"></p>
                     <div class="modal-benefits modal-section">
                         <div class="modal-section-title">

@@ -1010,6 +1010,173 @@ footer {
         justify-content: center;
         max-width: 300px;
     }
+    
+    .modal-section {
+        margin-bottom: 25px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding-bottom: 20px;
+    }
+    
+    .modal-section:last-child {
+        border-bottom: none;
+    }
+    
+    .order-btn, .question-btn {
+        min-height: 60px;
+        padding: 0 20px;
+        margin: 5px 0;
+    }
+    
+    .badge-custom {
+        margin: 5px;
+        min-width: 120px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .variants-buttons {
+        justify-content: center;
+    }
+    
+    .variant-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Ajustements généraux pour les modales sur mobile */
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+        margin: 5vh auto;
+        padding: 15px;
+        border-radius: 10px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
+    }
+    
+    /* Amélioration des contrôles tactiles */
+    .close-modal, .close-variants-modal {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1002;
+        color: var(--text-color);
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        border: none;
+        line-height: 1;
+    }
+    
+    .close-modal:hover, .close-variants-modal:hover {
+        transform: rotate(90deg);
+        background-color: var(--primary-color);
+        color: white;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Bouton de fermeture spécifique pour la modale des variétés */
+    .close-variants-modal {
+        width: 45px;
+        height: 45px;
+        font-size: 32px;
+        background-color: var(--primary-color);
+        color: white;
+        right: 20px;
+        top: 20px;
+    }
+    
+    /* Ajustement des cartes de variantes sur mobile */
+    .variant-card {
+        margin-bottom: 15px;
+    }
+    
+    .variants-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Amélioration du bouton retour pour mobile */
+    .back-to-variants {
+        padding: 12px 0;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .back-to-variants i {
+        font-size: 0.9rem;
+    }
+    
+    /* Ajustements pour les images dans les modales pour mobile */
+    .modal-product-image img {
+        max-height: 50vh;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    /* Ajustements pour les boutons de variantes sur mobile */
+    .variants-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .variant-btn {
+        flex: 1 1 auto;
+        min-width: 70px;
+        padding: 10px 15px;
+        margin: 5px;
+        font-size: 0.95rem;
+    }
+    
+    /* Ajustements pour les boutons d'action sur mobile */
+    .modal-action {
+        flex-direction: column;
+    }
+    
+    .order-btn, .question-btn {
+        width: 100%;
+        height: 54px;
+        margin: 5px 0;
+    }
+    
+    /* Améliorer la lisibilité des sections dans la modale */
+    .modal-section {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    /* Style plus lisible pour les badges sur mobile */
+    .badge-custom {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        margin: 5px;
+    }
+    
+    /* Rendu des formulaires plus accessible sur mobile */
+    input, textarea, select, button {
+        font-size: 16px; /* Évite le zoom sur iOS */
+    }
+    
+    /* Amélioration des transitions pour le tactile */
+    .modal-content.animated {
+        animation-duration: 0.25s;
+    }
+    
+    /* Assurer le bon affichage des avis clients sur mobile */
+    .review-item {
+        padding: 12px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1101,6 +1268,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
     overflow-y: auto; /* Permet le défilement principal si nécessaire */
+    -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
 }
 
 .modal-content {
@@ -1113,22 +1281,36 @@ footer {
     animation: modalFadeIn 0.3s ease;
     max-height: none; /* Suppression de la hauteur max pour éviter le double défilement */
     overflow-y: visible; /* Pas de défilement au niveau du contenu */
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
 }
 
-@keyframes modalFadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.close-modal {
+.close-modal, .close-variants-modal {
     position: absolute;
-    right: clamp(10px, 3vw, 20px);
-    top: clamp(5px, 2vw, 15px);
-    font-size: clamp(20px, 4vw, 28px);
+    right: 15px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    z-index: 1002;
     color: var(--text-color);
-    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border: none;
+    line-height: 1;
+}
+
+.close-modal:hover, .close-variants-modal:hover {
+    transform: rotate(90deg);
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
 
 .modal-product-details {
@@ -1600,4 +1782,577 @@ footer {
     font-size: clamp(0.8rem, 1.8vw, 0.9rem);
 }
 
-/* Les anciens styles responsifs basés sur des points de rupture fixes peuvent être conservés comme fallback */ 
+/* Sélecteur de variantes dans la modale */
+.modal-variants-selector {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--light-bg);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.variants-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.variant-btn {
+    padding: 8px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    background: white;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.variant-btn:hover {
+    background-color: var(--light-bg);
+    transform: translateY(-2px);
+}
+
+.variant-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Variantes spécifiques */
+.variant-btn[data-variant="curcuma"] {
+    border-color: #E6A800;
+}
+
+.variant-btn[data-variant="curcuma"].active {
+    background-color: #E6A800;
+}
+
+.variant-btn[data-variant="citron"] {
+    border-color: #FFD700;
+}
+
+.variant-btn[data-variant="citron"].active {
+    background-color: #FFD700;
+    color: var(--text-color);
+}
+
+.variant-btn[data-variant="carotte"] {
+    border-color: #FF7F00;
+}
+
+.variant-btn[data-variant="carotte"].active {
+    background-color: #FF7F00;
+}
+
+.variant-btn[data-variant="charbon"] {
+    border-color: #333333;
+}
+
+.variant-btn[data-variant="charbon"].active {
+    background-color: #333333;
+}
+
+/* Animation plus fluide pour la modale */
+@keyframes modalFadeIn {
+    0% { opacity: 0; transform: translateY(-20px) scale(0.95); }
+    70% { transform: translateY(5px) scale(1); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Styles pour la modale de sélection des variétés */
+.variants-modal-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--light-bg);
+}
+
+.variants-modal-header h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.variants-modal-header p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.variants-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.variant-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--light-bg);
+}
+
+.variant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.variant-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.variant-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.variant-card:hover .variant-image img {
+    transform: scale(1.05);
+}
+
+.variant-info {
+    padding: 15px;
+}
+
+.variant-info h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.variant-info p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.variant-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.variant-highlights span {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.variant-promo {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+.view-variant-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-variant-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Variantes spécifiques */
+.variant-card[data-variant="curcuma"] .view-variant-btn {
+    background-color: #E6A800;
+}
+
+.variant-card[data-variant="curcuma"] .view-variant-btn:hover {
+    background-color: #D99A00;
+}
+
+.variant-card[data-variant="citron"] .view-variant-btn {
+    background-color: #FFD700;
+    color: var(--text-color);
+}
+
+.variant-card[data-variant="citron"] .view-variant-btn:hover {
+    background-color: #F5CE00;
+}
+
+.variant-card[data-variant="carotte"] .view-variant-btn {
+    background-color: #FF7F00;
+}
+
+.variant-card[data-variant="carotte"] .view-variant-btn:hover {
+    background-color: #F07700;
+}
+
+.variant-card[data-variant="charbon"] .view-variant-btn {
+    background-color: #333333;
+}
+
+.variant-card[data-variant="charbon"] .view-variant-btn:hover {
+    background-color: #222222;
+}
+
+@media (max-width: 768px) {
+    .variants-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation pour les modales */
+@keyframes fadeInScale {
+    0% { 
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-content.animated {
+    animation: fadeInScale 0.3s ease forwards;
+    will-change: transform, opacity;
+}
+
+/* Animation de fermeture pour les modales */
+@keyframes fadeOutScale {
+    0% { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% { 
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+}
+
+.modal-content.closing {
+    animation: fadeOutScale 0.4s ease forwards;
+    will-change: transform, opacity;
+}
+
+/* Animation pour les cartes de variantes */
+@keyframes fadeInUp {
+    0% { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.variant-card.animated {
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Animation pour le retour de la modale détaillée à la modale des variétés */
+@keyframes slideOutRight {
+    0% { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% { 
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+/* Overlay temporaire pour transitions fluides */
+.temp-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+/* Fond des modales avec transition */
+.modal {
+    transition: all 0.4s ease;
+    opacity: 1;
+}
+
+.modal.closing {
+    opacity: 0.7;
+}
+
+/* Assurer que le contenu modal reste au-dessus de l'overlay */
+.modal-content {
+    position: relative;
+    z-index: 1001;
+}
+
+/* Optimisations générales de performance */
+.modal, .modal-content, .variant-card {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Support du zoom d'image */
+.modal-product-image img {
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.modal-product-image img.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out;
+    max-width: none;
+    max-height: none;
+}
+
+/* Animation de swipe pour changer de variante */
+.modal-product-details {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Style pour les images zoomables */
+.modal-product-image {
+    position: relative;
+    overflow: visible; /* Permettre le débordement pour le zoom */
+}
+
+.modal-product-image img:hover {
+    opacity: 0.95;
+}
+
+/* Indicateur de zoom */
+.modal-product-image::after {
+    content: "\f00e"; /* Icône loupe Font Awesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-product-image:hover::after {
+    opacity: 1;
+}
+
+/* Bouton de retour aux variétés */
+.back-to-variants {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 8px 0;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.back-to-variants:hover {
+    color: var(--primary-color);
+    transform: translateX(-5px);
+}
+
+.back-to-variants i {
+    font-size: 0.8rem;
+}
+
+/* Animation pulsante améliorée pour les promos */
+@keyframes pulsePromo {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); box-shadow: 0 0 10px rgba(255, 107, 107, 0.5); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulsePromo 1.5s infinite;
+}
+
+/* Badge mis en évidence */
+.badge-highlight {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    animation: pulseHighlight 2s infinite;
+}
+
+@keyframes pulseHighlight {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1.15); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+    100% { transform: scale(1.1); }
+}
+
+/* Thèmes spécifiques pour chaque variante */
+.theme-curcuma .modal-section-title .title-icon {
+    background-color: #E6A800;
+}
+
+.theme-citron .modal-section-title .title-icon {
+    background-color: #FFD700;
+}
+
+.theme-carotte .modal-section-title .title-icon {
+    background-color: #FF7F00;
+}
+
+.theme-charbon .modal-section-title .title-icon {
+    background-color: #333333;
+}
+
+/* Animation pour les avis clients */
+.review-item {
+    transition: all 0.5s ease;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.review-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.review-item .stars {
+    margin-bottom: 8px;
+}
+
+.review-item .comment {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.review-item .author {
+    text-align: right;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Support des écrans de petite taille (téléphones) */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 98%;
+        margin: 1vh auto;
+        padding: 12px;
+    }
+    
+    .modal-product-details {
+        flex-direction: column;
+    }
+    
+    .modal-product-info h2 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-section-title h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Simplifier l'apparence des badges sur très petits écrans */
+    .badge-container {
+        justify-content: center;
+    }
+    
+    /* Optimisation pour rotation de l'écran */
+    @media (orientation: landscape) {
+        .modal-content {
+            max-height: 85vh;
+        }
+        
+        .modal-product-details {
+            flex-direction: row;
+        }
+        
+        .modal-product-image {
+            flex: 0 0 40%;
+        }
+        
+        .modal-product-info {
+            flex: 0 0 55%;
+        }
+    }
+}
+
+/* Optimisation du défilement tactile */
+.modal, .modal-content, .modal-product-info {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* Assurer que le zoom est possible */
+.modal img {
+    max-width: 100%;
+}
+
+/* Ajustements pour les gestes tactiles */
+.variant-card, .back-to-variants, .close-modal, .view-variant-btn, .variant-btn {
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* Supprimer le flash bleu sur iOS */
+    touch-action: manipulation; /* Optimisation pour gestes tactiles */
+}
+
+/* Style pour le défilement quand la modale est ouverte */
+body.modal-open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Pour les appareils à écran large (tablettes) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .variants-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .modal-content {
+        width: 90%;
+        max-width: 750px;
+    }
+}
+
+/* Animations avec préférence de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+    .modal-content.animated,
+    .variant-card.animated,
+    .pulse-animation,
+    .badge-highlight {
+        animation: none !important;
+        transition: none !important;
+    }
+} 
