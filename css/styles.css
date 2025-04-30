@@ -1068,7 +1068,7 @@ footer {
     animation: float-ingredient 2s ease-in-out infinite;
 }
 
-/* Modal Styles */
+/* Modal Styles améliorés avec adaptation dynamique */
 .modal {
     display: none;
     position: fixed;
@@ -1078,17 +1078,19 @@ footer {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
+    overflow-y: auto; /* Permet le défilement si nécessaire */
 }
 
 .modal-content {
     position: relative;
     background-color: white;
-    margin: 5% auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 800px;
+    margin: clamp(10px, 5vh, 50px) auto;
+    padding: clamp(15px, 3vw, 30px);
+    width: clamp(280px, 90%, 800px);
     border-radius: var(--border-radius);
     animation: modalFadeIn 0.3s ease;
+    max-height: clamp(300px, 90vh, 1000px);
+    overflow-y: auto;
 }
 
 @keyframes modalFadeIn {
@@ -1098,86 +1100,158 @@ footer {
 
 .close-modal {
     position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
+    right: clamp(10px, 3vw, 20px);
+    top: clamp(5px, 2vw, 15px);
+    font-size: clamp(20px, 4vw, 28px);
     font-weight: bold;
     cursor: pointer;
     color: var(--text-color);
+    z-index: 10;
 }
 
 .modal-product-details {
     display: flex;
-    gap: 30px;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: clamp(15px, 3vw, 30px);
+    margin-top: clamp(10px, 2vw, 25px);
 }
 
 .modal-product-image {
-    flex: 1;
+    flex: 1 1 clamp(250px, 40%, 400px);
 }
 
 .modal-product-image img {
     width: 100%;
     border-radius: var(--border-radius);
+    max-height: 70vh;
+    object-fit: contain;
 }
 
 .modal-product-info {
-    flex: 1;
+    flex: 1 1 clamp(280px, 55%, 600px);
+    padding-right: clamp(5px, 1vw, 15px);
 }
 
 .modal-product-info h2 {
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: clamp(10px, 2vh, 20px);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 
-.modal-description {
-    margin-bottom: 20px;
-    line-height: 1.6;
+.modal-section {
+    position: relative;
+    margin-bottom: clamp(15px, 3vh, 25px);
+    padding: clamp(10px, 2vw, 15px);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
-.modal-features {
+.modal-section-title {
+    display: flex;
+    align-items: center;
+    gap: clamp(5px, 1vw, 10px);
+    margin-bottom: clamp(8px, 1.5vh, 12px);
+    padding-bottom: clamp(5px, 1vh, 8px);
+    border-bottom: 2px solid var(--light-bg);
+}
+
+.modal-section-title .title-icon {
+    width: clamp(20px, 5vw, 30px);
+    height: clamp(20px, 5vw, 30px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.modal-section-title h3 {
+    margin: 0;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    color: var(--text-color);
+}
+
+.modal-product-image .badge-container {
+    margin-top: clamp(10px, 2vh, 15px);
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+    justify-content: center;
+    gap: clamp(5px, 1vw, 10px);
 }
 
-.modal-features span {
-    background-color: var(--light-bg);
-    padding: 5px 15px;
+.badge-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(5px, 1vw, 8px);
+    padding: clamp(5px, 1.5vw, 15px) clamp(8px, 2vw, 15px);
     border-radius: 20px;
-    font-size: 0.9rem;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
 }
 
-.modal-price {
-    margin: 20px 0;
-}
-
-.modal-price .price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.modal-price .promo {
-    background-color: #ff6b6b;
+.badge-custom .badge-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(16px, 4vw, 20px);
+    height: clamp(16px, 4vw, 20px);
     color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    margin-left: 10px;
-    font-size: 0.9rem;
+    border-radius: 50%;
+    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
 }
 
-/* Responsive Modal */
-@media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        margin: 10% auto;
-    }
-    
-    .modal-product-details {
-        flex-direction: column;
-    }
+.modal-action {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: clamp(20px, 4vh, 40px) 0;
+    gap: clamp(10px, 2vw, 15px);
+}
+
+.order-btn, .question-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: clamp(40px, 10vw, 70px);
+    padding: 0 clamp(15px, 3vw, 25px);
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    font-weight: 700;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.order-btn {
+    background-color: #D4A76A;
+    color: white;
+    border: none;
+    flex: 1 1 clamp(140px, 60%, 300px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.question-btn {
+    background-color: #C17C3F;
+    color: white;
+    border: none;
+    flex: 1 1 clamp(120px, 40%, 200px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.order-btn:hover, .question-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    opacity: 0.95;
+}
+
+.order-btn i, .question-btn i {
+    margin-right: 8px;
 }
 
 /* Barre de défilement personnalisée pour tout le site */
@@ -1277,30 +1351,6 @@ footer {
     margin: 15px 0;
 }
 
-.badge-custom {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 15px;
-    border-radius: 20px;
-    background-color: white;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
-.badge-custom .badge-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    color: white;
-    border-radius: 50%;
-    font-size: 0.8rem;
-}
-
 .badge-custom:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
@@ -1379,45 +1429,9 @@ footer {
 }
 
 /* Style renforcé pour les sections de la modale */
-.modal-section {
-    position: relative;
-    margin-bottom: 25px;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
 .modal-section:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transform: translateY(-3px);
-}
-
-.modal-section-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--light-bg);
-}
-
-.modal-section-title .title-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1rem;
-}
-
-.modal-section-title h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--text-color);
 }
 
 /* Variantes de couleurs pour les icônes des sections de la modale */
@@ -1523,4 +1537,45 @@ footer {
 
 .order-btn i, .question-btn i {
     margin-right: 8px;
-} 
+}
+
+.modal-description {
+    margin-bottom: clamp(15px, 3vh, 20px);
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.modal-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(5px, 1vw, 10px);
+    margin-bottom: clamp(15px, 3vh, 20px);
+}
+
+.modal-features span {
+    background-color: var(--light-bg);
+    padding: clamp(4px, 1vw, 5px) clamp(10px, 2vw, 15px);
+    border-radius: 20px;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+}
+
+.modal-price {
+    margin: clamp(15px, 3vh, 20px) 0;
+}
+
+.modal-price .price {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.modal-price .promo {
+    background-color: #ff6b6b;
+    color: white;
+    padding: clamp(4px, 1vw, 5px) clamp(8px, 1.5vw, 10px);
+    border-radius: 4px;
+    margin-left: clamp(5px, 1.5vw, 10px);
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+}
+
+/* Les anciens styles responsifs basés sur des points de rupture fixes peuvent être conservés comme fallback */ 
