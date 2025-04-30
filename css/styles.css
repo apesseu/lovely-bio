@@ -1284,7 +1284,7 @@ footer {
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
 }
 
-.close-modal, .close-variants-modal {
+.close-modal {
     position: absolute;
     right: 15px;
     top: 15px;
@@ -1780,77 +1780,6 @@ footer {
     border-radius: 4px;
     margin-left: clamp(5px, 1.5vw, 10px);
     font-size: clamp(0.8rem, 1.8vw, 0.9rem);
-}
-
-/* Sélecteur de variantes dans la modale */
-.modal-variants-selector {
-    margin-bottom: 25px;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: var(--light-bg);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-}
-
-.variants-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.variant-btn {
-    padding: 8px 15px;
-    border: 2px solid var(--primary-color);
-    border-radius: 20px;
-    background: white;
-    color: var(--primary-color);
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.variant-btn:hover {
-    background-color: var(--light-bg);
-    transform: translateY(-2px);
-}
-
-.variant-btn.active {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-/* Variantes spécifiques */
-.variant-btn[data-variant="curcuma"] {
-    border-color: #E6A800;
-}
-
-.variant-btn[data-variant="curcuma"].active {
-    background-color: #E6A800;
-}
-
-.variant-btn[data-variant="citron"] {
-    border-color: #FFD700;
-}
-
-.variant-btn[data-variant="citron"].active {
-    background-color: #FFD700;
-    color: var(--text-color);
-}
-
-.variant-btn[data-variant="carotte"] {
-    border-color: #FF7F00;
-}
-
-.variant-btn[data-variant="carotte"].active {
-    background-color: #FF7F00;
-}
-
-.variant-btn[data-variant="charbon"] {
-    border-color: #333333;
-}
-
-.variant-btn[data-variant="charbon"].active {
-    background-color: #333333;
 }
 
 /* Animation plus fluide pour la modale */
@@ -2355,4 +2284,75 @@ body.modal-open {
         animation: none !important;
         transition: none !important;
     }
+}
+
+/* Sélecteur de variantes dans la modale */
+.modal-variants-selector {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--light-bg);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.variants-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.variant-btn {
+    padding: 8px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    background: white;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.variant-btn:hover {
+    background-color: var(--light-bg);
+    transform: translateY(-2px);
+}
+
+.variant-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Variantes spécifiques */
+.variant-btn[data-variant="curcuma"] {
+    border-color: #E6A800;
+}
+
+.variant-btn[data-variant="curcuma"].active {
+    background-color: #E6A800;
+}
+
+.variant-btn[data-variant="citron"] {
+    border-color: #FFD700;
+}
+
+.variant-btn[data-variant="citron"].active {
+    background-color: #FFD700;
+    color: var(--text-color);
+}
+
+.variant-btn[data-variant="carotte"] {
+    border-color: #FF7F00;
+}
+
+.variant-btn[data-variant="carotte"].active {
+    background-color: #FF7F00;
+}
+
+.variant-btn[data-variant="charbon"] {
+    border-color: #333333;
+}
+
+.variant-btn[data-variant="charbon"].active {
+    background-color: #333333;
 } 
