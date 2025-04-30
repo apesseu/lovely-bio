@@ -1010,6 +1010,29 @@ footer {
         justify-content: center;
         max-width: 300px;
     }
+    
+    .modal-section {
+        margin-bottom: 25px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding-bottom: 20px;
+    }
+    
+    .modal-section:last-child {
+        border-bottom: none;
+    }
+    
+    .order-btn, .question-btn {
+        min-height: 60px;
+        padding: 0 20px;
+        margin: 5px 0;
+    }
+    
+    .badge-custom {
+        margin: 5px;
+        min-width: 120px;
+        text-align: center;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1101,6 +1124,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
     overflow-y: auto; /* Permet le défilement principal si nécessaire */
+    -webkit-overflow-scrolling: touch; /* Défilement fluide sur iOS */
 }
 
 .modal-content {
@@ -1113,11 +1137,7 @@ footer {
     animation: modalFadeIn 0.3s ease;
     max-height: none; /* Suppression de la hauteur max pour éviter le double défilement */
     overflow-y: visible; /* Pas de défilement au niveau du contenu */
-}
-
-@keyframes modalFadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
 }
 
 .close-modal {
@@ -1129,6 +1149,20 @@ footer {
     cursor: pointer;
     color: var(--text-color);
     z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.close-modal:hover, .close-modal:active {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotate(90deg);
 }
 
 .modal-product-details {
@@ -1600,4 +1634,11 @@ footer {
     font-size: clamp(0.8rem, 1.8vw, 0.9rem);
 }
 
-/* Les anciens styles responsifs basés sur des points de rupture fixes peuvent être conservés comme fallback */ 
+/* Les anciens styles responsifs basés sur des points de rupture fixes peuvent être conservés comme fallback */
+
+/* Animation plus fluide pour la modale */
+@keyframes modalFadeIn {
+    0% { opacity: 0; transform: translateY(-20px) scale(0.95); }
+    70% { transform: translateY(5px) scale(1); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+} 
