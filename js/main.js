@@ -268,34 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Animation on Scroll
-    const animateElements = document.querySelectorAll('.animate');
-    
-    function checkIfInView() {
-        const windowHeight = window.innerHeight;
-        const windowTopPosition = window.scrollY;
-        const windowBottomPosition = (windowTopPosition + windowHeight);
-        
-        animateElements.forEach(element => {
-            const elementHeight = element.offsetHeight;
-            const elementTopPosition = element.offsetTop;
-            const elementBottomPosition = (elementTopPosition + elementHeight);
-            
-            // Check if element is in view
-            if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
-                element.classList.add('animated');
-            } else {
-                element.classList.remove('animated');
-            }
-        });
-    }
-    
-    if (animateElements.length > 0) {
-        window.addEventListener('scroll', checkIfInView);
-        window.addEventListener('resize', checkIfInView);
-        window.addEventListener('load', checkIfInView);
-    }
-
+2    
     // Détails des produits
     const products = {
         curcuma: {
@@ -1169,4 +1142,111 @@ document.addEventListener('DOMContentLoaded', function() {
     // Exécuter à l'initialisation et au redimensionnement
     window.addEventListener('resize', adjustModalForMobile);
     adjustModalForMobile();
+
+    // Loader animé
+    const loader = document.createElement('div');
+    loader.id = 'site-loader';
+    loader.innerHTML = '<div class="loader-spinner"></div>';
+    document.body.appendChild(loader);
+    window.addEventListener('load', () => {
+        loader.classList.add('hide');
+        setTimeout(() => loader.remove(), 600);
+    });
+
+    // Parallax sur la vidéo de fond et les stats
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const videoBg = document.querySelector('.hero-video-bg');
+        const stats = document.querySelector('.hero-stats');
+        if (videoBg) {
+            videoBg.style.transform = `translateY(${scrolled * 0.2}px)`;
+        }
+        if (stats) {
+            stats.style.transform = `translateY(${scrolled * 0.1}px)`;
+        }
+    });
+
+    // Fade sur les transitions de page (liens internes)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.hash = targetId;
+                    document.body.classList.remove('fade-out');
+                }, 400);
+            }
+        });
+    });
+
+    // Animation des statistiques
+    function animateStats() {
+        const stats = document.querySelectorAll('.stat-number');
+        stats.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-value'));
+            let current = 0;
+            const increment = target / 50; // 50 étapes d'animation
+            const duration = 2000; // 2 secondes
+            const step = duration / 50;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    stat.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    stat.textContent = Math.floor(current);
+                }
+            }, step);
+        });
+    }
+
+    // Observer pour les animations au scroll (dernière déclaration)
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                if (entry.target.classList.contains('hero-stats')) {
+                    animateStats();
+                }
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observer tous les éléments avec la classe animate-on-scroll
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        scrollObserver.observe(element);
+    });
+
+    // Optimisation du chargement des images
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.classList.add('lazy-load');
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+    });
+
+    // Gestion du parallax sur la vidéo de fond
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const videoBg = document.querySelector('.hero-video-bg');
+        if (videoBg) {
+            videoBg.style.transform = `translateY(${scrolled * 0.2}px)`;
+        }
+    });
+
+    // Animation du bouton d'appel à l'action
+    const ctaButton = document.querySelector('.btn.primary');
+    if (ctaButton) {
+        ctaButton.classList.add('pulse-animation');
+    }
+222
+    var banner = document.querySelector('.hero-info-banner');
+    if (banner) {
+        banner.classList.add('visible');
+    }
 }); 
